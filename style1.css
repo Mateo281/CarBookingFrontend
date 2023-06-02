@@ -1,0 +1,119 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 0;
+}
+.grid {
+	display: grid;
+	gap: 20px;
+}
+.page-container {
+	min-height: 100vh;
+	grid-template-rows: auto 1fr auto auto;
+}
+.page-header {
+	background: url(slike/Cover.png) center center/cover no-repeat;
+}
+/* skraćeni backgroud - background: bg-color bg-image position/bg-size bg-repeat bg-attachment */	
+	.site-navigation ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+.site-navigation, .page-footer {
+	background-color: rgb(0,0,0);
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+}	
+.site-navigation ul, .aside-content ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	line-height: 200%;
+}
+.admin {
+	margin-right: auto;
+}
+.login {
+	position: relative;
+}
+/* linkovi horizontalno 1. način (lakši :) ) - li elementi su zadano block 
+.site-navigation ul li {
+	display: inline-block; 
+} */
+
+/* linkovi horizontalno 2. način (lakši :) ) */
+.site-navigation ul {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
+	justify-content: center;
+}
+/* linkovi općenito */
+a:link {
+	color: steelblue;
+	text-decoration: none;
+}
+a:hover {
+	color: grey;
+	text-decoration: underline;
+}
+/* linkovi glavne navigacije */
+.site-navigation ul a {
+	color: #eee;
+	text-decoration: none;
+}
+
+.site-navigation ul a:hover {
+	color: grey;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 900;
+}
+.site-title {
+	color: white;
+	font-size: 120px;
+	text-shadow: 2px 2px 2px black;
+}
+.primary, .secondary {
+	grid-template-columns: 1fr minmax(285px, 1200px)  1fr;
+}
+
+.page-title, .home-content, .aside-content, .page-content {
+	grid-column: 2/3;
+}
+.home-content, .aside-content {
+	grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+}
+
+img {
+	max-width: 100%; /* slika se prilagođava širini svog roditelja, ali ujedno nikad ne prečazi svoju stvarnu max širinu */
+	height: auto;
+}
+.post {
+	background-color: white;
+	padding: 10px;
+}
+.content-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+.content-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+section {
+	text-align: justify;
+}
+.banner {
+	background: #333 center center/cover no-repeat;
+	min-height: 250px;
+	color: white;
+	font-size: 1.5em;
+	padding: 20px;
+	align-items: center;
+}
